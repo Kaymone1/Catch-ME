@@ -1,12 +1,26 @@
-const squares = document.querySelectorAll('.square')
 
-const pika = document.querySelector('.pikaRun')
+const timeLeft = document.querySelector('#time');
 
-const timeLeft = document.querySelector('#time')
+const instrHolder = document.getElementById('howtoplay');
 
-const score = document.querySelector('#score')
+const instrBtn = document.getElementById('pressInstr');
 
+instrBtn.addEventListener(`click`, () => {
+    instrHolder.style.display = 'block';
+    console.log("button clicked")
+});
+
+const quitBtn = document.getElementById('pressQuit');
+quitBtn.addEventListener('click', () => {
+    console.log('click works')
+})
+
+const score = document.querySelector('#score');
 let points = 0
+
+const pika = document.querySelector('.pikaRun');
+
+const squares = document.querySelectorAll('.square');
 
 function randomSquare() {
     squares.forEach(square => {
