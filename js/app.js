@@ -13,7 +13,8 @@ function randomSquare() {
         square.classList.remove('pikaRun')
     })
     
-    let randomPos = squares[Math.floor(Math.random() * 16)]
-    console.log(randomPos)
+    let quickAttack = squares[Math.floor(Math.random() * 16)]
+    quickAttack.classList.add('pikaRun')
+    console.log(quickAttack)
 }
 randomSquare()
