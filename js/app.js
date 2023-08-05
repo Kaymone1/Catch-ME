@@ -1,7 +1,3 @@
-
-const timeLeft = document.querySelector('#time');
-let timer = 60;
-
 const instrHolder = document.getElementById('howtoplay');
 
 const instrBtn = document.getElementById('pressInstr');
@@ -24,6 +20,15 @@ instrBtn.addEventListener(`click`, () => {
 
 const score = document.querySelector('#score');
 let points = 0
+
+const timeLeft = document.querySelector('#time');
+let timer = 60;
+
+function timeDown() {
+    timer--;
+    console.log(timer)
+}
+timeDown()
 
 const pika = document.querySelector('.pikaRun');
 let speed = 1800; //initial speed
