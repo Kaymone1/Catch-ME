@@ -9,3 +9,8 @@
 	width: 200px;
 	border: solid black 1px;
 }
+
+.pikaRun {
+    background-image: url("img/pikarun.jpeg");
+    background-position: cover;
+}
