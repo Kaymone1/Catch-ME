@@ -24,18 +24,40 @@ let points = 0
 const timeLeft = document.querySelector('#time');
 let timer = 60;
 
-function timeDown() {
-    timer--;
-    console.log(timer)
-}
-timeDown()
+let countDownTimer = setInterval(timer, 1000)
 
 const pika = document.querySelector('.pikaRun');
 let speed = 1800; //initial speed
 
+let hitSpot
+
 const squares = document.querySelectorAll('.square');
 
-// let hitSpot = null
+squares.forEach(square => {
+    square.addEventListener('mousedown', () => {
+      if (square.id == hitSpot) {
+        result++
+        score.textContent = result
+        hitSpot = null
+      }
+      console.log(`Square clicked${squares}`)
+    })
+  })
+
+
+
+  function timeDown() {
+    timer--;
+    timeLeft.textContent = timer
+    console.log(`${timer} seconds`)
+
+    if (timer == 0) {
+        clearInterval(countDownTimer)
+        clearInterval(timer)
+        alert('GAME OVER! Your final score is ' + result)
+      }
+}
+timeDown()
 
 function randomSquare() {
     squares.forEach(square => {
@@ -45,11 +67,12 @@ function randomSquare() {
     let quickAttack = squares[Math.floor(Math.random() * 16)]
     quickAttack.classList.add('pikaRun')
     console.log(quickAttack)
+
+    hitSpot = randomSquare.id 
 }
 randomSquare()
 
-// function pikaMove() {
-//     let timerId = null
-//     timerId = setInterval(randomSquare, 1000)
-// }
-// pikaMove()
+function pikaMove() {
+    timer = setInterval(randomSquare, 1000)
+}
+pikaMove()
