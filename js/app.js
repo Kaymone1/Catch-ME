@@ -4,5 +4,4 @@ const timeElement = document.getElementById('time');
 
 // Get the start, instructions, and quit buttons
 const startButton = document.getElementById('startbutton');
-const instructionsButton = document.getElementById('pressInstr');
 const quitButton = document.getElementById('pressQuit');
