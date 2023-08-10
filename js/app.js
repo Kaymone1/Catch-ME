@@ -6,6 +6,9 @@ const timeHlder = document.getElementById('time');
 const startBtn = document.getElementById('startbutton');
 const quitBtn = document.getElementById('pressQuit');
 
+//pikachu's image that will glide around the board
+const pika = document.querySelector('.pikaRun');
+
 // Get all the squares so I can manipulate them
 const sqrs = document.querySelectorAll('.square');
 
