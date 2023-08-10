@@ -13,6 +13,7 @@
 .pikaRun {
     background-image: url('/Users/kennya/GA/projects/Catch-ME/img/pikaRun.jpeg');
     background-position: cover;
+    background-repeat: no-repeat;
 }
 /* .howtocontent, #howtoplay {
     display: none;

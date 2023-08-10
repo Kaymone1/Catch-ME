@@ -35,4 +35,20 @@ function upScore() {
 function upTime() {
     timeElement.textContent = timeLeft;
   }
-  
+
+// Function to handle a square click
+//event will be the click
+function squareClick(event) {
+
+    //condition of what happens when player clicks pikaRun; target will be .pikaRun
+    // classlist to bring the domtokenlist of pikarun (method i want to interact with)
+    //I am checking that only img in square is clicked
+    if (event.target.classList.contains('pikaRun')) { 
+      score += 1;
+      console.log('pikachu has been caught')
+      updateScore();
+      event.target.classList.remove('pikaRun');
+      pikaMove();
+    }
+  }
+
