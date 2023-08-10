@@ -21,3 +21,15 @@ let pikaSpeed = null;
 // starting pika speed in 4.5 seconds? will be testig time to see
 //what time intervals would be best to start pikas movements
 let pikaStart = 4500; 
+
+// Function to update the score, i created the score board with text so change text
+//I target score with textContent
+function upScore() {
+    scoreElement.textContent = score;
+  }
+
+// Function to update the time
+function upTime() {
+    timeElement.textContent = timeLeft;
+  }
+  
