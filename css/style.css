@@ -20,7 +20,18 @@ body {
     background-position: cover;
     background-repeat: no-repeat;
 }
-/* .howtocontent, #howtoplay {
-    display: none;
-} */
+.overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  color: rgb(240, 210, 151);
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+
+}
 
