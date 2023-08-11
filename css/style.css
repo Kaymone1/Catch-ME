@@ -12,7 +12,7 @@ body {
 .square {
     height: 200px;
 	width: 200px;
-	border: solid black 1px;
+	border: solid black 2px;
 }
 
 .pikaRun {
@@ -48,4 +48,8 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(4, 3, 3, 0.5);
+}
+#startbutton, #pressQuit {
+ font-size: larger;
+ margin-bottom: 10px;
 }
