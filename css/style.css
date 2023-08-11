@@ -1,3 +1,8 @@
+body {
+    background-image: url("/Users/kennya/GA/projects/Catch-ME/img/pokebackgrnd.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .grid {
 	display: grid;
     grid-template-columns: repeat(4, 200px);
@@ -18,3 +23,4 @@
 /* .howtocontent, #howtoplay {
     display: none;
 } */
+
