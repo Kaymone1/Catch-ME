@@ -25,13 +25,27 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  color: rgb(240, 210, 151);
+  font-size: larger;
+  color: rgba(241, 163, 6, 0.941);
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(4, 3, 3, 0.5);
 
 }
-
+.howtocontent {
+  text-align: center;
+  color: rgb(184, 248, 220);
+  padding: 23px 0 23px 0;
+  font-size: x-large;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(4, 3, 3, 0.5);
+}
