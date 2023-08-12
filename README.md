@@ -12,7 +12,7 @@ ttps://developer.mozilla.org/en-US/docs/Web/API/setInterval
 https://www.w3schools.com/howto/howto_css_overlay.asp
 
 #Unsolved Mysteries
-I wasn't able to get the player interaction to show but I was only able to show 1 players score. I've reached my other set goals but I had alot of difficulty displaying 2 players in a versus that saves the high score and record the winner.
+I was able to get my player versus player to show but the quit button doesnt stop the timer. It only resets the score and timer but getting the timer to stop until player hits start again is my current obstacle. Also, I wasnt sure how to get my alert for turn ending to stop after the winner has been chosen.
 
 #Click link to play Here
 https://gentle-granita-60a72a.netlify.app/
