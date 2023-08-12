@@ -53,3 +53,11 @@ body {
  font-size: larger;
  margin-bottom: 10px;
 }
+
+#startbutton:hover {
+    background-color: rgb(192, 226, 43);
+}
+
+#pressQuit:hover {
+    background-color: rgb(17, 0, 255);
+}
