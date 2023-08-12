@@ -14,9 +14,14 @@ const sqrs = document.querySelectorAll('.square');
 
 // initialize variables the fun begins
 //I want to track players score/time need a variable
-let score = 0;
+let score = 0; //or [0, 0]
 let timeLeft = 30; //seconds timer
 
+// //create player var
+// let currentPlyer = null
+// const player1 = 'PLAYER1 WON TRY AGAIN NEXT TIME';
+// const player2 = 'PLAYER2 WON TRY AGAIN NEXT TIME';
+// const tie = 'TIE NO WINNER';
 
 //tracking pikachus movements; this will be what i manipulate to change his speed
 let pikaMvmentTime = null;
@@ -89,7 +94,6 @@ const timerIntervalId = setInterval(() => {
     } else {
       clearInterval(timerIntervalId);
       clearInterval(pikaMvmentTime);
-      announceWinner();
     }
   }, 1000);
 
@@ -107,7 +111,6 @@ startBtn.addEventListener('click', () => {
 // Attach click event listener to the "Quit" button
 quitBtn.addEventListener('click', () => {
   clearInterval(pikaMvmentTime);
-  announceWinner();
   startGame()
     console.log('game reset')
 });

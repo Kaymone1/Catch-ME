@@ -12,4 +12,4 @@ ttps://developer.mozilla.org/en-US/docs/Web/API/setInterval
 https://www.w3schools.com/howto/howto_css_overlay.asp
 
 #Unsolved Mysteries
-I wasn't able to get the player interaction to show but I was only able to show 1 players score. I've reached my other set goals but I had alot of difficulty displaying 2 players.
+I wasn't able to get the player interaction to show but I was only able to show 1 players score. I've reached my other set goals but I had alot of difficulty displaying 2 players. My images also keep disappearing everytime I deploy.
