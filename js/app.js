@@ -14,14 +14,48 @@ const sqrs = document.querySelectorAll('.square');
 
 // initialize variables the fun begins
 //I want to track players score/time need a variable
-let score = 0; //or [0, 0]
+let score = [0, 0]; //or [0, 0] ?
 let timeLeft = 30; //seconds timer
 
-// //create player var
-// let currentPlyer = null
-// const player1 = 'PLAYER1 WON TRY AGAIN NEXT TIME';
-// const player2 = 'PLAYER2 WON TRY AGAIN NEXT TIME';
-// const tie = 'TIE NO WINNER';
+//create players and outcome var
+let currentPlayer = 0 //this is the starting player
+
+const players = ['player 1', 'player 2'];
+
+//need a turn ender function to show the switches
+function endTurn() {
+  currentPlayer = 1 - currentPlayer //switch btwn indexes 0 and 1
+  //switch
+  alert(`TIMES UP! Its ${players[currentPlayer]}'s turn`)
+  //resetting
+  clearInterval(pikaMvmentTime)
+  
+  console.log(players[1] + " will start now")
+}
+
+function resetGame() {
+  score = [0, 0]; // Reset scores for both players
+  timeLeft = 30;
+  pikaSpeed = 4000; // Reset to initial speed
+  upScore();
+  upTime();
+  clearInterval(pikaMvmentTime);
+
+  // Show whos playing with concatenating
+  console.log("It's " + players[currentPlayer] + "'s turn!");
+
+  // Reset the game timer interval
+  const timerIntervalId = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft -= 1; // Go down by 1 second
+      upTime();
+    } else {
+      clearInterval(timerIntervalId);
+    }
+  }, 1000);
+
+  pikaMove();
+}
 
 //tracking pikachus movements; this will be what i manipulate to change his speed
 let pikaMvmentTime = null;
@@ -76,15 +110,17 @@ function pikaMove() {
 
   // Function to start the game
 function startGame() {
-    score = 0;
+    score = [0, 0];
     timeLeft= 30;
-    currentPlyer = 0;
     pikaSpeed = 1000;
     upScore();
     upTime();
 
 // Clear existing interval (if any)
 clearInterval(pikaMvmentTime);
+
+//show whos playing with concatenating
+console.log("It's" + players[currentPlayer] + "turn!")
 
 // Set up the game timer interval
 const timerIntervalId = setInterval(() => {
@@ -93,7 +129,7 @@ const timerIntervalId = setInterval(() => {
       upTime();
     } else {
       clearInterval(timerIntervalId);
-      clearInterval(pikaMvmentTime);
+      endTurn();
     }
   }, 1000);
 
@@ -106,11 +142,14 @@ sqrs.forEach(square => square.addEventListener('click', squareClick));
 // Attach click event listener to the "Start" button
 startBtn.addEventListener('click', () => {
   startGame();
+  console.log("game starting")
 });
 
 // Attach click event listener to the "Quit" button
 quitBtn.addEventListener('click', () => {
   clearInterval(pikaMvmentTime);
-  startGame()
     console.log('game reset')
+    resetGame();
 });
+
+
