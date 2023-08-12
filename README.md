@@ -15,4 +15,4 @@ https://www.w3schools.com/howto/howto_css_overlay.asp
 I wasn't able to get the player interaction to show but I was only able to show 1 players score. I've reached my other set goals but I had alot of difficulty displaying 2 players in a versus that saves the high score and record the winner.
 
 #Click link to play Here
-https://superlative-cascaron-fc0c63.netlify.app/
+https://regal-puffpuff-87312a.netlify.app
