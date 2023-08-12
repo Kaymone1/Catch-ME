@@ -17,6 +17,12 @@ const sqrs = document.querySelectorAll('.square');
 let score = [0, 0]; //or [0, 0] ?
 let timeLeft = 30; //seconds timer
 
+//tracking pikachus movements; this will be what i manipulate to change his speed
+let pikaMvmentTime = null;
+
+// make empty interval variable maybe this will be easier to work with
+let timerIntervalId = null;
+
 //create players and outcome var
 let currentPlayer = 0 //this is the starting player
 
@@ -45,20 +51,20 @@ function resetGame() {
   console.log("It's " + players[currentPlayer] + "'s turn!");
 
   // Reset the game timer interval
-  const timerIntervalId = setInterval(() => {
+  timerIntervalId = setInterval(() => {
     if (timeLeft > 0) {
       timeLeft -= 1; // Go down by 1 second
       upTime();
     } else {
       clearInterval(timerIntervalId);
+      endTurn();
+      console.log("game starting over")
     }
   }, 1000);
 
   pikaMove();
 }
 
-//tracking pikachus movements; this will be what i manipulate to change his speed
-let pikaMvmentTime = null;
 
 // starting pika speed in 4.5 seconds? will be testig time to see
 //what time intervals would be best to start pikas movements in milliseconds
@@ -118,12 +124,13 @@ function startGame() {
 
 // Clear existing interval (if any)
 clearInterval(pikaMvmentTime);
+clearInterval(timerIntervalId);
 
 //show whos playing with concatenating
 console.log("It's" + players[currentPlayer] + "turn!")
 
 // Set up the game timer interval
-const timerIntervalId = setInterval(() => {
+timerIntervalId = setInterval(() => {
     if (timeLeft > 0) {
       timeLeft -= 1;//go down by 1 second
       upTime();
@@ -148,6 +155,7 @@ startBtn.addEventListener('click', () => {
 // Attach click event listener to the "Quit" button
 quitBtn.addEventListener('click', () => {
   clearInterval(pikaMvmentTime);
+  clearInterval(timerIntervalId)
     console.log('game reset')
     resetGame();
 });
