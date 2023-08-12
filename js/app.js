@@ -38,15 +38,21 @@ function endTurn() {
   timer = 30;
   pikaSpeed = 4000;
   pikaMvmentTime = 1000;
-//This should go to next player without altering
+
+  //tracking next player turn 
+  console.log(`It's ${players[currentPlayer]}'s turn!`);
+
+//This should go to next player without reset whole game
  // Check if both players have completed their turns
  if (currentPlayer === 0) {
   console.log("Both players have completed their turns.");
-
-  const winner = determineWinner();
-  console.log(`The winner is: ${winner}`);
+//make this function to check for winner
+  const winner = findWinner();
+  if (winner !== "It's a tie!") {
+    alert(`Congrats! You were able to keep up, ${winner} wins!`);
   } else {
-  console.log(`It's ${players[currentPlayer]}'s turn!`);
+    alert("It's a tie! Play another round");
+  }
 
   pikaMove();
   }
