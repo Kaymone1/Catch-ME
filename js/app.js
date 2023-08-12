@@ -181,7 +181,7 @@ quitBtn.addEventListener('click', () => {
     console.log('Player quit')
     resetGame();
 });
-
+//function that will compare player scores to return who won
 function findWinner() {
   if (score[0] > score[1]) {
     return players[0];
