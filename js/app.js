@@ -45,7 +45,11 @@ function resetGame() {
   pikaSpeed = 4000; // Reset to initial speed
   upScore();
   upTime();
+  //RESET movement and timer.
   clearInterval(pikaMvmentTime);
+  clearInterval(timerIntervalId);
+  //disable timer ??
+  timerIntervalId = null;
 
   // Show whos playing with concatenating
   console.log("It's " + players[currentPlayer] + "'s turn!");
@@ -73,7 +77,8 @@ let pikaSpeed = 4000;
 // Function to update the score, i created the score board with text so change text
 //I target score with textContent
 function upScore() {
-    scoreHlder.textContent = score;
+  //had to change it to a string to to update my array
+  scoreHlder.textContent = `Player 1: ${score[0]} | Player 2: ${score[1]}`;
   }
 
 // Function to update the time
@@ -89,9 +94,10 @@ function squareClick(event) {
     // classlist to bring the domtokenlist of pikarun (method i want to interact with)
     //I am checking that only img in square is clicked
     if (event.target.classList.contains('pikaRun')) { 
-      score += 1;
+      score[currentPlayer] += 1; //update adding player
       console.log('pikachu has been caught')
       upScore();
+      //removing pika from square for him to move around
       event.target.classList.remove('pikaRun');
       pikaMove();
     }
@@ -131,7 +137,8 @@ console.log("It's" + players[currentPlayer] + "turn!")
 
 // Set up the game timer interval
 timerIntervalId = setInterval(() => {
-    if (timeLeft > 0) {
+  //need to make sure timer reset but doesnt keep going
+    if (timerIntervalId && timeLeft > 0) {
       timeLeft -= 1;//go down by 1 second
       upTime();
     } else {
