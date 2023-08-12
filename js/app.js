@@ -14,7 +14,7 @@ const sqrs = document.querySelectorAll('.square');
 
 // initialize variables the fun begins
 //I want to track players score/time need a variable
-let score = [0, 0]; //or [0, 0] ?
+let score = [0, 0]; 
 let timeLeft = 30; //seconds timer
 
 //tracking pikachus movements; this will be what i manipulate to change his speed
@@ -84,7 +84,6 @@ function resetGame() {
 
   pikaMove();
 }
-
 
 // starting pika speed in 4.5 seconds? will be testig time to see
 //what time intervals would be best to start pikas movements in milliseconds
