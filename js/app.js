@@ -35,12 +35,21 @@ function endTurn() {
   alert(`TIMES UP! Its ${players[currentPlayer]}'s turn`)
   //resetting
   clearInterval(pikaMvmentTime)
-//This should go to next player without altering
-  console.log(players[currentPlayer] + " will start now")
+  timer = 30;
   pikaSpeed = 4000;
-  timeLeft = 30;
-  clearInterval(pikaMvmentTime);
+  pikaMvmentTime = 1000;
+//This should go to next player without altering
+ // Check if both players have completed their turns
+ if (currentPlayer === 0) {
+  console.log("Both players have completed their turns.");
+
+  const winner = determineWinner();
+  console.log(`The winner is: ${winner}`);
+  } else {
+  console.log(`It's ${players[currentPlayer]}'s turn!`);
+
   pikaMove();
+  }
 }
 
 function resetGame() {
@@ -168,4 +177,14 @@ quitBtn.addEventListener('click', () => {
     resetGame();
 });
 
+function findWinner() {
+  if (score[0] > score[1]) {
+    return players[0];
+    
+  } else if (score[1] > score[0]) {
+    return players[1];
+  } else {
+    return "It's a tie!";
+  }
+}
 
