@@ -17,19 +17,13 @@ const sqrs = document.querySelectorAll('.square');
 let score = 0;
 let timeLeft = 30; //seconds timer
 
-//players will begin at 0pts this reps who is going at the time
-let currentPlyer = 0;
-
-// //creating a player turn element so i know which person is scoring
-// const playerTurn = document.getElementById('playerTurn') tbc....
-
 
 //tracking pikachus movements; this will be what i manipulate to change his speed
 let pikaMvmentTime = null;
 
 // starting pika speed in 4.5 seconds? will be testig time to see
-//what time intervals would be best to start pikas movements
-let pikaSpeed = 4000; 
+//what time intervals would be best to start pikas movements in milliseconds
+let pikaSpeed = 3900; 
 
 // Function to update the score, i created the score board with text so change text
 //I target score with textContent
@@ -100,13 +94,6 @@ const timerIntervalId = setInterval(() => {
   }, 1000);
 
   pikaMove();
-}
-
-// Function to announce the winner
-function announceWinner() {
-    const winner = score > 1 ? currentPlyer : 1;
-    alert(`Player ${winner} wins with a score of ${score}!`);
-    
 }
 
   // Attach click event listeners to squares
