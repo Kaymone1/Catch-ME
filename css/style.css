@@ -1,5 +1,5 @@
 body {
-    background-image: url("/Users/kennya/GA/projects/Catch-ME/img/pokebackgrnd.png");
+    background-image: url("../img/pokebackgrnd.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .pikaRun {
-    background-image: url('/Users/kennya/GA/projects/Catch-ME/img/pikaRun.jpeg');
+    background-image: url("../img/pikaRun.jpeg");
     background-position: cover;
     background-repeat: no-repeat;
 }
