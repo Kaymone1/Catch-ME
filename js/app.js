@@ -35,8 +35,12 @@ function endTurn() {
   alert(`TIMES UP! Its ${players[currentPlayer]}'s turn`)
   //resetting
   clearInterval(pikaMvmentTime)
-  
-  console.log(players[1] + " will start now")
+//This should go to next player without altering
+  console.log(players[currentPlayer] + " will start now")
+  pikaSpeed = 4000;
+  timeLeft = 30;
+  clearInterval(pikaMvmentTime);
+  pikaMove();
 }
 
 function resetGame() {
@@ -48,11 +52,9 @@ function resetGame() {
   //RESET movement and timer.
   clearInterval(pikaMvmentTime);
   clearInterval(timerIntervalId);
-  //disable timer ??
-  timerIntervalId = null;
 
   // Show whos playing with concatenating
-  console.log("It's " + players[currentPlayer] + "'s turn!");
+  console.log("game reset");
 
   // Reset the game timer interval
   timerIntervalId = setInterval(() => {
@@ -61,7 +63,6 @@ function resetGame() {
       upTime();
     } else {
       clearInterval(timerIntervalId);
-      endTurn();
       console.log("game starting over")
     }
   }, 1000);
@@ -122,10 +123,8 @@ function pikaMove() {
 
   // Function to start the game
 function startGame() {
-    score = [0, 0];
     timeLeft= 30;
     pikaSpeed = 1000;
-    upScore();
     upTime();
 
 // Clear existing interval (if any)
@@ -143,7 +142,9 @@ timerIntervalId = setInterval(() => {
       upTime();
     } else {
       clearInterval(timerIntervalId);
-      endTurn();
+      if (timerIntervalId) {
+        endTurn();
+      }
     }
   }, 1000);
 
@@ -163,7 +164,7 @@ startBtn.addEventListener('click', () => {
 quitBtn.addEventListener('click', () => {
   clearInterval(pikaMvmentTime);
   clearInterval(timerIntervalId)
-    console.log('game reset')
+    console.log('Player quit')
     resetGame();
 });
 
