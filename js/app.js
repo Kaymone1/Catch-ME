@@ -23,7 +23,7 @@ let pikaMvmentTime = null;
 
 // starting pika speed in 4.5 seconds? will be testig time to see
 //what time intervals would be best to start pikas movements in milliseconds
-let pikaSpeed = 3900; 
+let pikaSpeed = 4000; 
 
 // Function to update the score, i created the score board with text so change text
 //I target score with textContent
@@ -72,7 +72,7 @@ function pikaMove() {
   // Function to start the game
 function startGame() {
     score = 0;
-    timeLeft= 40;
+    timeLeft= 30;
     currentPlyer = 0;
     pikaSpeed = 1000;
     upScore();
